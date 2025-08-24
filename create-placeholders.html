@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Image Generator - Orchid School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .image-item {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        .image-item h3 {
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .download-btn {
+            background: #8B0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        .download-btn:hover {
+            background: #6B0000;
+        }
+        .instructions {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #17a2b8;
+        }
+        .instructions h2 {
+            color: #17a2b8;
+            margin-top: 0;
+        }
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 Orchid School - Placeholder Image Generator</h1>
+        
+        <div class="instructions">
+            <h2>📋 Instructions</h2>
+            <p>This tool generates placeholder images for your school website. Here's what to do:</p>
+            <ul>
+                <li><strong>Generate Images:</strong> Click the "Generate Placeholder" button for each image</li>
+                <li><strong>Download Images:</strong> Right-click each image and "Save Image As..." to your images folder</li>
+                <li><strong>File Names:</strong> Save with the exact names shown below (e.g., "school-building.jpg")</li>
+                <li><strong>Replace Later:</strong> These are temporary - replace with real school photos when available</li>
+            </ul>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-item">
+                <h3>🏫 School Building</h3>
+                <canvas id="school-building" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('school-building', 'School Building', '#8B0000')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> school-building.webp</p>
+            </div>
+
+            <div class="image-item">
+                <h3>🚌 School Buses</h3>
+                <canvas id="school-buses" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('school-buses', 'School Buses', '#FFD700')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> school-buses.webp</p>
+            </div>
+
+            <div class="image-item">
+                <h3>🌳 School Campus</h3>
+                <canvas id="school-campus" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('school-campus', 'School Campus', '#228B22')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> school-campus.webp</p>
+            </div>
+
+            <div class="image-item">
+                <h3>🏷️ School Logo</h3>
+                <canvas id="school-logo" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('school-logo', 'School Logo', '#8B0000')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> school-logo.webp</p>
+            </div>
+
+            <div class="image-item">
+                <h3>🎨 School Murals</h3>
+                <canvas id="school-murals" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('school-murals', 'School Murals', '#FF6B35')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> school-murals.jpg</p>
+            </div>
+
+            <div class="image-item">
+                <h3>🏟️ School Courtyard</h3>
+                <canvas id="school-courtyard" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('school-courtyard', 'School Courtyard', '#4A90E2')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> school-courtyard.jpg</p>
+            </div>
+
+            <div class="image-item">
+                <h3>📚 Classroom</h3>
+                <canvas id="classroom" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('classroom', 'Modern Classroom', '#6C5CE7')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> classroom.jpg</p>
+            </div>
+
+            <div class="image-item">
+                <h3>🧪 Laboratory</h3>
+                <canvas id="laboratory" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('laboratory', 'Science Laboratory', '#00B894')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> laboratory.jpg</p>
+            </div>
+
+            <div class="image-item">
+                <h3>📖 Library</h3>
+                <canvas id="library" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('library', 'School Library', '#FDCB6E')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> library.jpg</p>
+            </div>
+
+            <div class="image-item">
+                <h3>💻 Computer Lab</h3>
+                <canvas id="computer-lab" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('computer-lab', 'Computer Laboratory', '#E17055')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> computer-lab.jpg</p>
+            </div>
+
+            <div class="image-item">
+                <h3>⚽ Sports Facilities</h3>
+                <canvas id="sports" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('sports', 'Sports Facilities', '#00B894')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> sports.jpg</p>
+            </div>
+
+            <div class="image-item">
+                <h3>🚐 Transportation</h3>
+                <canvas id="transport" width="300" height="200"></canvas>
+                <br>
+                <button class="download-btn" onclick="generateImage('transport', 'Transportation Services', '#FFD700')">Generate Placeholder</button>
+                <p><strong>Save as:</strong> transport.jpg</p>
+            </div>
+        </div>
+
+        <div class="instructions" style="margin-top: 30px;">
+            <h2>🎯 Next Steps</h2>
+            <ol>
+                <li>Generate all placeholder images using the buttons above</li>
+                <li>Download each image to your <code>images/</code> folder</li>
+                <li>Open <code>index.html</code> in your browser to view the website</li>
+                <li>Replace placeholder images with real school photos when available</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function generateImage(canvasId, title, color) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, adjustBrightness(color, -30));
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add some geometric shapes
+            ctx.fillStyle = adjustBrightness(color, 40);
+            ctx.globalAlpha = 0.3;
+            
+            // Random circles
+            for (let i = 0; i < 5; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const radius = Math.random() * 30 + 10;
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Reset alpha
+            ctx.globalAlpha = 1;
+            
+            // Add text
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Add shadow
+            ctx.shadowColor = 'rgba(0,0,0,0.5)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            
+            // Main title
+            ctx.fillText(title, canvas.width / 2, canvas.height / 2 - 20);
+            
+            // Subtitle
+            ctx.font = '16px Arial';
+            ctx.fillText('Placeholder Image', canvas.width / 2, canvas.height / 2 + 20);
+            
+            // Reset shadow
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            
+            // Add border
+            ctx.strokeStyle = '#FFFFFF';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(5, 5, canvas.width - 10, canvas.height - 10);
+            
+            // Add Orchid branding
+            ctx.fillStyle = '#FFD700';
+            ctx.font = 'bold 14px Arial';
+            ctx.fillText('Orchid School', canvas.width / 2, canvas.height - 30);
+        }
+        
+        function adjustBrightness(hex, percent) {
+            const num = parseInt(hex.replace("#", ""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) + amt;
+            const G = (num >> 8 & 0x00FF) + amt;
+            const B = (num & 0x0000FF) + amt;
+            return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+        }
+        
+        // Generate all images on page load
+        window.addEventListener('load', () => {
+            const images = [
+                { id: 'school-building', title: 'School Building', color: '#8B0000' },
+                { id: 'school-buses', title: 'School Buses', color: '#FFD700' },
+                { id: 'school-campus', title: 'School Campus', color: '#228B22' },
+                { id: 'school-logo', title: 'School Logo', color: '#8B0000' },
+                { id: 'school-murals', title: 'School Murals', color: '#FF6B35' },
+                { id: 'school-courtyard', title: 'School Courtyard', color: '#4A90E2' },
+                { id: 'classroom', title: 'Modern Classroom', color: '#6C5CE7' },
+                { id: 'laboratory', title: 'Science Laboratory', color: '#00B894' },
+                { id: 'library', title: 'School Library', color: '#FDCB6E' },
+                { id: 'computer-lab', title: 'Computer Laboratory', color: '#E17055' },
+                { id: 'sports', title: 'Sports Facilities', color: '#00B894' },
+                { id: 'transport', title: 'Transportation Services', color: '#FFD700' }
+            ];
+            
+            images.forEach(img => {
+                generateImage(img.id, img.title, img.color);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

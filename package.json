@@ -1,0 +1,62 @@
+{
+  "name": "orchid-school-website",
+  "version": "1.0.0",
+  "description": "A modern, responsive website for Orchid English Secondary School featuring the school's official logo colors and comprehensive information about programs, facilities, and achievements.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "build": "echo 'No build process required for static HTML site'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "school",
+    "education",
+    "website",
+    "responsive",
+    "orchid",
+    "nepal",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Orchid English Secondary School",
+  "license": "All Rights Reserved",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orchid-school/website.git"
+  },
+  "homepage": "https://orchidschool.edu.np",
+  "bugs": {
+    "url": "https://github.com/orchid-school/website/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "features": {
+    "responsive": true,
+    "mobile-first": true,
+    "accessibility": true,
+    "seo": true,
+    "performance": true
+  },
+  "colors": {
+    "primary": "#8B0000",
+    "secondary": "#FFD700",
+    "accent": "#228B22"
+  }
+}
+
+
+
+
+
